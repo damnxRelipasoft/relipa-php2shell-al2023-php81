@@ -1,0 +1,12 @@
+# /etc/yum.repos.d/relipa-php2shell.repo  (install.sh tự tạo file này)
+[relipa-php2shell]
+name=php8.1 rebuilt with PHP2Shell fix (AL2023)
+baseurl=https://raw.githubusercontent.com/damnxRelipasoft/relipa-php2shell-al2023-php81/main/al2023/$basearch/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://raw.githubusercontent.com/damnxRelipasoft/relipa-php2shell-al2023-php81/main/RPM-GPG-KEY-relipa-php2shell
+includepkgs=php8.1*
+# Repo Amazon dùng priority=10; phải nhỏ hơn để dnf chọn gói đã vá thay vì gói Amazon cùng tên
+priority=1
+skip_if_unavailable=1
